@@ -1,0 +1,10 @@
+clear all;
+close all;
+clc;
+[fn, pn] = uigetfile('*.png');
+fullname = fullfile(pn, fn);
+d = imread(fullname);
+image(:,:,1)=squareBlur(d(:,:,1));
+image(:,:,2)=squareBlur(d(:,:,2));
+image(:,:,3)=squareBlur(d(:,:,3));
+imshow(image);
